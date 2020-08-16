@@ -1,0 +1,2 @@
+class MemoryDecksController < ApplicationController
+end
