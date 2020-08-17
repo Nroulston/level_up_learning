@@ -4,8 +4,20 @@ class MemoryCardsController < ApplicationController
   def index
     @memory_cards = MemoryCard.all
   end
-
-
+  
+  def new
+    if params[:memory_deck_id]
+        @deck = MemoryDeck.find(params[:memory_deck_id])
+        @card = MemoryCard.new
+   
+    else
+        @card = MemoryCard.new
+    end
+  end
+  
+  def create
+    raise params.inspect
+  end
 
 
   private
