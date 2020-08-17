@@ -14,3 +14,12 @@ Rails.application.routes.draw do
 
 
 end
+
+
+#TODO refactor secrets to .env file
+#TODO nested routes to create memory cards
+#TODO validate information inputs
+#TODO scope methods to show only memory cards that are in a deck show page
+
+#TODO write the logic to advance memory cards show_dates
+#TODO scope method in training controller to show the cards that need to be practiced. 
