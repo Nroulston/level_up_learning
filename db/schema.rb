@@ -20,13 +20,13 @@ ActiveRecord::Schema.define(version: 2020_08_16_175416) do
   end
 
   create_table "memory_decks", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "memory_card_id", null: false
+    t.string "title"
     t.integer "interval_counter"
     t.datetime "date_of_next_practice"
+    t.integer "user_id", null: false
+    t.integer "memory_card_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["memory_card_id"], name: "index_memory_decks_on_memory_card_id"
     t.index ["user_id"], name: "index_memory_decks_on_user_id"
   end
 
@@ -50,6 +50,5 @@ ActiveRecord::Schema.define(version: 2020_08_16_175416) do
     t.index ["uid"], name: "index_users_on_uid"
   end
 
-  add_foreign_key "memory_decks", "memory_cards"
   add_foreign_key "memory_decks", "users"
 end

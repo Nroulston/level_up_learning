@@ -1,0 +1,6 @@
+
+
+<%= link_to "Create a deck", new_user_memory_deck_path %>
+<% @decks.each do |deck| %>
+  <p><%= link_to deck.title, memory_deck_path(deck)  %></p>
+<% end %>

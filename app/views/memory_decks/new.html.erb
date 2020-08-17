@@ -1,0 +1,5 @@
+<%= form_for(@deck) do |f| %>
+<%= f.text_field :title %>
+<%= hidden_field_tag(:user_id, params[:user_id]) %>
+<%= f.submit %>
+ <% end %>
