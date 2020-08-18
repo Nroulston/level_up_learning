@@ -31,17 +31,22 @@ class MemoryDecksController < ApplicationController
   end
 
   def edit
-    @deck = MemoryDeck.find_by(id: params[:id])
+    
   end
 
   def update
+    if @deck.update(deck_params)
+      redirect_to memory_deck_path(@deck)
+    else
+      render :edit
+    end
 
   end
 
   private
 
   def set_deck
-    @deck = MemoryDeck.find(params[:id])
+    @deck = MemoryDeck.find_by(id: params[:id])
   end
 
   def deck_params
