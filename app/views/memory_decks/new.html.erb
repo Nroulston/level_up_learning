@@ -1,5 +1,1 @@
-<%= form_for(@deck) do |f| %>
-<%= f.text_field :title, placeholder: (@deck.errors.full_messages_for(:title).first || "Enter your title")%>
-<%= hidden_field_tag(:user_id, params[:user_id]) %>
-<%= f.submit %>
- <% end %>
+<%= render partial: 'form_new_edit'   %>

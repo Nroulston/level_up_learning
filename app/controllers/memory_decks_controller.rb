@@ -30,6 +30,10 @@ class MemoryDecksController < ApplicationController
 
   end
 
+  def edit
+    @deck = MemoryDeck.find_by(id: params[:id])
+  end
+
   def update
 
   end
