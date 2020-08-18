@@ -9,16 +9,24 @@ class MemoryCardsController < ApplicationController
     if params[:memory_deck_id]
        set_memory_deck
         new_memory_card
-  
     else
         new_memory_card
     end
   end
   
   def create
-    raise params.inspect
+
     if params[:memory_deck_id]
       set_memory_deck
+      @card = @deck.build_memory_card(memory_card_params)
+      if @card.save
+       
+        redirect_to memory_deck_path(@deck)
+      else
+        
+        render :new
+      end
+
     
     end
   end

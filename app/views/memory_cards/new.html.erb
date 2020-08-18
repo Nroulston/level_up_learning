@@ -1,5 +1,8 @@
 <%= form_for [@deck, @card] do |f| %>
-<%= f.text_field :question %>
-<%= f.text_field :answer %>
+
+<%= f.text_field :question, placeholder: (@card.errors.full_messages_for(:question).first || "Enter your question") %>
+<%= f.text_field :answer, placeholder: (@card.errors.full_messages_for(:answer).first || "Enter your answer") %>
 <%= f.submit %>
 <% end %>
+
+
