@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :memory_cards, only: [:index, :show, :new, :create, :edit, :update]
   
-  resources :memory_decks, only: [:index, :show, :new, :create, :edit, :update] do
+  resources :memory_decks, only: [:show, :new, :create, :edit, :update] do
     resources :memory_cards, only: [:new, :create]
   end
   
