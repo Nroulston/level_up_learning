@@ -17,10 +17,12 @@ class MemoryCardsController < ApplicationController
   def create
 
     if params[:memory_deck_id]
+      
       set_memory_deck
-      @card = @deck.build_memory_card(memory_card_params)
-      if @card.save
-       
+      dup_deck = @deck.dup
+      @card = dup_deck.build_memory_card(memory_card_params)
+      
+      if dup_deck.save 
         redirect_to memory_deck_path(@deck)
       else
         
