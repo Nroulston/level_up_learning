@@ -25,7 +25,6 @@ class MemoryCardsController < ApplicationController
       if dup_deck.save 
         redirect_to memory_deck_path(@deck)
       else
-        
         render :new
       end
 

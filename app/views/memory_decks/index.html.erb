@@ -1,12 +1,13 @@
 
   <%# Move this over into a helper method that will create the html below. Use this link to learn https://api.rubyonrails.org/v6.0.3.2/classes/ActionView/Helpers/TagHelper.html#method-i-tag %>
+ 
 <% if current_user.id == params[:user_id].to_i %>
   <h2><%= current_user.email %></h2>
   <br>
   <%= link_to "Create a deck", new_user_memory_deck_path %>
   <br>
   <h2>Decks</h2>
-  <% current_user.memory_decks.each do |deck| %>
+  <% MemoryDeck.joins(:user).where("user_id = ?", params[:user_id]).group("title").each  do |deck| %>
     <p><%= link_to deck.title, memory_deck_path(deck)  %></p>
   <% end %>
 
