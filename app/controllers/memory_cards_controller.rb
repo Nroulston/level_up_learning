@@ -28,7 +28,7 @@ class MemoryCardsController < ApplicationController
       
       if @deck.save 
         record = DeckCardRecord.last
-        record.update(practice_date: DateTime.now, practice_interval_counter: 0)
+        record.update(practice_date: Time.now, practice_interval_counter: 0)
   
         redirect_to memory_deck_path(@deck)
       else

@@ -1,0 +1,6 @@
+<% if @needs_practicing %>
+   <%= link_to "Start your Training", memory_card_path(@needs_practicing.first)%>
+  <% @needs_practicing.each do |card| %>
+    <%= card.question %>
+  <% end %>
+<% end %>

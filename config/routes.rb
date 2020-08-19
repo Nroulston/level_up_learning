@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :memory_decks, only: [:index, :new]
   end
   
-  root "memory_cards#index"
+  root "training#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 
