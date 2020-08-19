@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  serialize :cards_needing_practice
+
   has_many :memory_decks
   has_many :memory_cards, through: :memory_decks
 
