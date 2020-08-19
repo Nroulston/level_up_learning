@@ -5,6 +5,10 @@ class MemoryCardsController < ApplicationController
     @memory_cards = MemoryCard.all
   end
   
+  def show
+
+  end
+
   def new
     if params[:memory_deck_id]
        set_memory_deck
@@ -13,6 +17,8 @@ class MemoryCardsController < ApplicationController
         new_memory_card
     end
   end
+
+
   
   def create
 
@@ -30,9 +36,16 @@ class MemoryCardsController < ApplicationController
       else
         render :new
       end
-
-    
     end
+  end
+
+  def edit
+
+  end
+
+  def update
+    byebug
+
   end
 
 
@@ -49,7 +62,7 @@ class MemoryCardsController < ApplicationController
     params.require(:memory_card).permit(:question, :answer)
   end
   def set_memory_card
-    @memory_card = MemoryCard.find(params[:id])
+    @card = MemoryCard.find(params[:id])
   end
 
 end
