@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_16_175416) do
+ActiveRecord::Schema.define(version: 2020_08_19_153807) do
+
+  create_table "deck_card_records", force: :cascade do |t|
+    t.integer "memory_deck_id", null: false
+    t.integer "memory_card_id", null: false
+    t.datetime "practice_date"
+    t.integer "practice_interval_counter"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["memory_card_id"], name: "index_deck_card_records_on_memory_card_id"
+    t.index ["memory_deck_id"], name: "index_deck_card_records_on_memory_deck_id"
+  end
 
   create_table "memory_cards", force: :cascade do |t|
     t.string "question"
@@ -21,10 +32,7 @@ ActiveRecord::Schema.define(version: 2020_08_16_175416) do
 
   create_table "memory_decks", force: :cascade do |t|
     t.string "title"
-    t.integer "interval_counter"
-    t.datetime "date_of_next_practice"
     t.integer "user_id", null: false
-    t.integer "memory_card_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_memory_decks_on_user_id"
@@ -50,5 +58,7 @@ ActiveRecord::Schema.define(version: 2020_08_16_175416) do
     t.index ["uid"], name: "index_users_on_uid"
   end
 
+  add_foreign_key "deck_card_records", "memory_cards"
+  add_foreign_key "deck_card_records", "memory_decks"
   add_foreign_key "memory_decks", "users"
 end
