@@ -2,7 +2,12 @@
 <h2><%= @deck.title %></h2>
 <h4>Cards</h4>
 
+<ul>
+<% @deck.memory_cards.each do |card| %>
+<li><%= link_to card.question, memory_card_path(card)	 %></li>
 
+<% end %>
+</ul>
 
 
 <br>
