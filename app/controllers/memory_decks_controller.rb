@@ -19,12 +19,14 @@ class MemoryDecksController < ApplicationController
   end
 
   def create
-   
+    #Add autofill with jquery or stimuluous. 
     @deck = current_user.memory_decks.find_or_create_by(deck_params)
-
+     
     if @deck.save
       redirect_to user_memory_decks_path(current_user)
+      
     else
+      #add flash message for error of wrong type of name
       render :new
     end
 
