@@ -23,15 +23,13 @@ class MemoryCardsController < ApplicationController
   def create
 
     if params[:memory_deck_id]
-      
       set_memory_deck
-      
       @card = @deck.memory_cards.build(memory_card_params)
       
       if @deck.save 
         record = DeckCardRecord.last
         record.update(practice_date: DateTime.now, practice_interval_counter: 0)
-       
+  
         redirect_to memory_deck_path(@deck)
       else
         render :new
@@ -44,7 +42,11 @@ class MemoryCardsController < ApplicationController
   end
 
   def update
-    byebug
+    if @card.update(memory_card_params)
+      redirect_to @card
+    else
+      render :edit
+    end
 
   end
 
