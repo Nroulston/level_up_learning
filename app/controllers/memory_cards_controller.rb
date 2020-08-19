@@ -19,10 +19,13 @@ class MemoryCardsController < ApplicationController
     if params[:memory_deck_id]
       
       set_memory_deck
-      dup_deck = @deck.dup
-      @card = dup_deck.build_memory_card(memory_card_params)
       
-      if dup_deck.save 
+      @card = @deck.memory_cards.build(memory_card_params)
+      
+      if @deck.save 
+        record = DeckCardRecord.last
+        record.update(practice_date: DateTime.now, practice_interval_counter: 0)
+  
         redirect_to memory_deck_path(@deck)
       else
         render :new
