@@ -1,4 +1,5 @@
-<% if current_user.cards_needing_practice.present? %>
+<% if @cards.present? %>
    <%= link_to "Start your Training", new_training_path%>
   
   <% end %>
+ 
