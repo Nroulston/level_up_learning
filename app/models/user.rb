@@ -27,7 +27,7 @@ class User < ApplicationRecord
   
   def card_to_practice
     if cards_for_practice?
-      @card ||= self.cards_needing_practice.first
+      @card = self.cards_needing_practice.first
 
     end
   end

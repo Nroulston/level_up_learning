@@ -20,14 +20,15 @@ class TrainingController < ApplicationController
 
      current_record.practice_date = Time.now.next_day(current_record.practice_interval_counter)
 
-     @cards.delete_at(0)
+     current_user.cards_needing_practice.delete_at(0)
 
      
     else
       current_record.practice_interval_counter = Training.card_advancement_steps[0]
       
-      @cards << @cards.shift
+      current_user.cards_needing_practice << current_user.cards_needing_practice.shift
     end
+    current_user.save
     current_record.save
     redirect_to new_training_path
   end
@@ -35,7 +36,7 @@ class TrainingController < ApplicationController
   private 
   def set_cards_for_practice
   current_user.cards_to_practice
-   @cards ||= current_user.cards_needing_practice
+  @cards = current_user.cards_needing_practice
   end
 
   def set_card_for_practice
