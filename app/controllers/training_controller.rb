@@ -22,6 +22,10 @@ class TrainingController < ApplicationController
 
      current_user.cards_needing_practice.delete_at(0)
 
+     if current_user.cards_needing_practice.blank?
+      current_user.cards_needing_practice = nil
+     end
+
      
     else
       current_record.practice_interval_counter = Training.card_advancement_steps[0]
