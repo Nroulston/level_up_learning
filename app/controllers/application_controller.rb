@@ -6,9 +6,4 @@ class ApplicationController < ActionController::Base
     request.env['omniauth.origin'] || root_path
   end
 
-  def cards_needing_practiced
-    @cards ||= current_user.memory_cards.joins(:deck_card_records).where("deck_card_records.practice_date <= 'Time.now'")
-  end
-
-
 end
