@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_19_153807) do
+ActiveRecord::Schema.define(version: 2020_08_20_160311) do
 
   create_table "deck_card_records", force: :cascade do |t|
     t.integer "memory_deck_id", null: false
@@ -36,6 +36,11 @@ ActiveRecord::Schema.define(version: 2020_08_19_153807) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_memory_decks_on_user_id"
+  end
+
+  create_table "trainings", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
