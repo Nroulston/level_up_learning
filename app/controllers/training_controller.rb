@@ -1,9 +1,9 @@
 class TrainingController < ApplicationController
   before_action :set_card_for_practice, only: [:new, :show, :update]
-  before_action :set_cards_for_practice, only: [:index, :update]
+  before_action :set_cards_for_practice, only: [:update]
 
   def index  
-    set_cards_for_practice
+     set_cards_for_practice
   end
  
   def new

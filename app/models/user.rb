@@ -21,9 +21,10 @@ class User < ApplicationRecord
   end
 
   def cards_to_practice
-    
-    self.cards_needing_practice ||= self.memory_cards.joins(:deck_card_records).where("deck_card_records.practice_date <= ?", Time.now)
-    self.save
+    unless self.cards_needing_practice.present?
+      self.cards_needing_practice = self.memory_cards.joins(:deck_card_records).where("deck_card_records.practice_date <= ?", Time.now)
+      self.save
+    end
   end
   
   def card_to_practice
