@@ -1,0 +1,9 @@
+<%= @card.question %>
+<%= @card.answer %>
+<br>
+
+
+<%= link_to "That was easy advance card", training_path(@card, advance_card: true), method: :patch%>
+<br>
+<%= link_to "That was hard keep practicing", training_path(@card), method: :patch%>
+<br>
