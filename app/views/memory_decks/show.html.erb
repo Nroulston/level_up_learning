@@ -1,5 +1,7 @@
 
 <h2><%= @deck.title %></h2>
+<%= link_to "Edit title of Deck", edit_memory_deck_path(@deck) %>
+<%= link_to 'Delete Deck',  @deck,  method: :delete, data: { confirm: 'Are you sure?' } %>
 <h4>Cards</h4>
 
 <ul>
@@ -13,7 +15,6 @@
 <br>
 
 
-<%= link_to "Edit title of Deck", edit_memory_deck_path(@deck) %>
 <br>
 <%= link_to "Create a Card", new_memory_deck_memory_card_path(@deck) %>
 

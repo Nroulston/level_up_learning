@@ -1,4 +1,5 @@
 class TrainingController < ApplicationController
+ 
   before_action :set_card_for_practice, only: [:new, :show, :update]
   before_action :set_cards_for_practice, only: [:update]
 
@@ -9,7 +10,7 @@ class TrainingController < ApplicationController
   def new
   end
 
-  def show
+  def show  
   end
 
   def update

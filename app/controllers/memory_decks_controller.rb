@@ -1,6 +1,6 @@
 class MemoryDecksController < ApplicationController
-
-  before_action :set_deck, only: [:show, :edit, :update, :delete]
+  
+  before_action :set_deck, only: [:show, :edit, :update, :destroy]
   def index
     
       if params[:user_id] && current_user.id == params[:user_id]
@@ -11,7 +11,12 @@ class MemoryDecksController < ApplicationController
   end
 
   def show
-  
+    if current_user == @deck.user
+      render :show
+    else
+      flash[:error] = "You don't have access to that Deck. Sign in to your account to see it."
+      redirect new_user_session_path
+    end
   end
   
   def new
@@ -33,16 +38,31 @@ class MemoryDecksController < ApplicationController
   end
 
   def edit
-    
+    if current_user == @deck.user
+      render :edit
+    else
+      flash[:error] = "You don't have access to that Deck. Sign in to your account to see it."
+      redirect new_user_session_path
+    end
   end
 
   def update
-    if @deck.update(deck_params)
+    if @deck.update(deck_params) 
       redirect_to memory_deck_path(@deck)
     else
       render :edit
     end
+  end
 
+  def destroy
+    if current_user == @deck.user
+      @deck.destroy
+      flash[:notice] = "deck deleted successfully "
+      redirect_to user_memory_decks_path(current_user)
+    else
+      flash[:error] = "You don't have access to that deck. Sign in to your account to see it."
+      redirect_to new_user_session_path
+    end
   end
 
   private
