@@ -28,13 +28,17 @@ class TrainingController < ApplicationController
 
      
     else
-      current_record.practice_interval_counter = Training.card_advancement_steps[0]
+      current_record.practice_interval_counter = Training.practice_interval_steps[0]
       
       current_user.cards_needing_practice << current_user.cards_needing_practice.shift
     end
     current_user.save
     current_record.save
-    redirect_to new_training_path
+    if current_user.cards_needing_practice
+      redirect_to new_training_path
+    else
+      redirect_to root_path
+    end
   end
 
   private 
