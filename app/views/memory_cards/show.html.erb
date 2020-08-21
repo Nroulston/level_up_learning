@@ -1,10 +1,24 @@
+<div id="sheet" class="clearfix">
+  <div class="left">
+    <div class="header">
+    <h1>Card</h1>
+      <div class='links'>
+        <ul>
+            <h3><li> <%= link_to "Back to deck: #{@deck.title} ",  memory_deck_path(@deck)%></li></h3>
+          <h3><li> <%= link_to "Edit", edit_memory_card_path(@card)%>
+          </li></h3>
+        </ul>  
+      </div>
+    </div>
+    <div class='content'>
+      
+      <h3>Question</h3>
+      <p><%= @card.question %></p>
+      <h3>Answer</h3> 
+      <p><%= @card.answer %></p>
+      <%#TODO when accesed through nested routes show the Practice date, and the current interval %>
 
-<h4>Question</h4>
-<br>
-<%= @card.question %> <br>
-<h4>Answer</h4> <br>
-<%= @card.answer %> <br>
-<%= link_to "Edit", edit_memory_card_path(@card)%>
-<%#TODO Create a nested route when accessing cards through decks. Show the Practice date, and the current interval %>
-
-<%#TODO If you don't like the idea of a nested routes you can use an AR query to get the DeckCardRecord %>
+     
+    </div>  
+  </div>  
+</div>  

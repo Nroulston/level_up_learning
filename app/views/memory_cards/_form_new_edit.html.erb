@@ -1,8 +1,21 @@
-<%= form_for [@deck, @card] do |f| %>
+<div id="sheet" class="clearfix">
+  <div class="left">
+    <div class="header">
+      <h1>Deck</h1>
+    </div>
+    <div class='content'>
 
-<%= f.text_field :question, placeholder: (@card.errors.full_messages_for(:question).first || "Enter your question") %>
-<%= f.text_field :answer, placeholder: (@card.errors.full_messages_for(:answer).first || "Enter your answer") %>
-<%= f.submit %>
-<% end %>
-
+      <%= form_for [@deck, @card] do |f| %>
+        <h3><%= f.label :question %></h3>
+        
+        <p><%= f.text_field :question, placeholder: (@card.errors.full_messages_for(:question).first || "Enter your question") %></p>
+        
+        <h3><%= f.label :answer %></h3>
+        
+        <p><%= f.text_field :answer, placeholder: (@card.errors.full_messages_for(:answer).first || "Enter your answer") %></p>
+        <p><%= f.submit %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
 

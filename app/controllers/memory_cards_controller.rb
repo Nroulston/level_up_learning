@@ -8,7 +8,7 @@ class MemoryCardsController < ApplicationController
   end
   
   def show
-
+    set_memory_deck
   end
 
   def new
@@ -40,12 +40,12 @@ class MemoryCardsController < ApplicationController
   end
 
   def edit
-    if current_user == @card.user
-      render :edit
-    else
-      flash[:alert] = "You don't have access to that card. Sign in to your account to see it."
-      redirect new_user_session_path
-    end
+    # if current_user == @card.user
+    #   render :edit
+    # else
+    #   flash[:alert] = "You don't have access to that card. Sign in to your account to see it."
+    #   redirect new_user_session_path
+    # end
   end
 
   def update

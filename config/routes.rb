@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :memory_cards, only: [:index, :show, :new, :create, :edit, :update]
   
   resources :memory_decks do
-    resources :memory_cards, only: [:new, :create]
+    resources :memory_cards, only: [:new, :create, :show]
   end
   
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }

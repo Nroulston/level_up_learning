@@ -15,7 +15,7 @@
       <h3>Cards</h3>
       <ul>
         <% @deck.memory_cards.each do |card| %>
-          <li><%= link_to card.question, memory_card_path(card)	 %></li>
+          <li><%= link_to card.question, memory_deck_memory_card_path(@deck, card) %></li>
         <% end %>
       </ul>
       <%= link_to "Create a Card", new_memory_deck_memory_card_path(@deck) %>
