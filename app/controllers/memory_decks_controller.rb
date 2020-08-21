@@ -11,12 +11,7 @@ class MemoryDecksController < ApplicationController
   end
 
   def show
-    if current_user == @deck.user
-      render :show
-    else
-      flash[:error] = "You don't have access to that Deck. Sign in to your account to see it."
-      redirect new_user_session_path
-    end
+    
   end
   
   def new
@@ -41,7 +36,7 @@ class MemoryDecksController < ApplicationController
     if current_user == @deck.user
       render :edit
     else
-      flash[:error] = "You don't have access to that Deck. Sign in to your account to see it."
+      flash[:alert] = "You don't have access to that Deck. Sign in to your account to see it."
       redirect new_user_session_path
     end
   end
@@ -60,7 +55,7 @@ class MemoryDecksController < ApplicationController
       flash[:notice] = "deck deleted successfully "
       redirect_to user_memory_decks_path(current_user)
     else
-      flash[:error] = "You don't have access to that deck. Sign in to your account to see it."
+      flash[:alert] = "You don't have access to that deck. Sign in to your account to see it."
       redirect_to new_user_session_path
     end
   end

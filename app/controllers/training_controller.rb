@@ -14,7 +14,8 @@ class TrainingController < ApplicationController
   end
 
   def update
-    current_record = DeckCardRecord.joins(memory_card: :users).where(memory_card: @card).first
+    current_record = DeckCardRecord.record_of_users_memory_card(@card)
+
     if params[:advance_card]
 
      current_record.practice_interval_counter = Training.practice_interval_steps[Training.practice_interval_steps.index(current_record.practice_interval_counter) + 1]
