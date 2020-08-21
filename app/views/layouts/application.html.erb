@@ -10,16 +10,33 @@
   </head>
 
   <body>
-     <% if user_signed_in? %>
+    <div id="header" class="clearfix">
+			
+			<h1>Leveled Up Learning</h1>
+			<h2>Bootcamp just got a little easier</h2>
+			<div class="links right">
+				<ul>
+					<li><a href="#" class="first">My Profile</a></li>
+					<li><a href="#">Help</a></li>
+          
+					<li><a href="#" class="last">Sign Out</a></li>
+				</ul>
+			</div>
+			
+			
+			<div class="tabs">
+				<ul>
+					<li><a href="#">Training</a></li>
+					<li><a href="#" class="active">Decks</a></li>
+					<li><a href="#">Memory Cards</a></li>
+				</ul>
+			</div>
+		</div>
+
+    
         <li>
         <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
         </li>
-      <% else %>
-        <li>
-        <%= link_to('Login', new_user_session_path) %>  
-        </li>
-      <% end %>
-     <p>hello</p>
     <%= yield %>
   </body>
 </html>
