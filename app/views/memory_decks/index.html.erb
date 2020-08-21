@@ -11,8 +11,9 @@
     <div class='content'>
       <h3>Your Decks</h3>
       <% if current_user.id == params[:user_id].to_i %>
+        
         <ul>
-          <% MemoryDeck.joins(:user).where("user_id = ?", params[:user_id]).group("title").each  do |deck| %>
+          <% current_user.memory_decks.each  do |deck| %>
             <li><%= link_to deck.title, memory_deck_path(deck)  %></li>
           <% end %>
         </ul>
