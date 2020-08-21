@@ -4,7 +4,9 @@
     <h1>Card</h1>
       <div class='links'>
         <ul>
+            <% if @deck %>
             <h3><li> <%= link_to "Back to deck: #{@deck.title} ",  memory_deck_path(@deck)%></li></h3>
+            <% end %>
           <h3><li> <%= link_to "Edit", edit_memory_card_path(@card)%>
           </li></h3>
         </ul>  
