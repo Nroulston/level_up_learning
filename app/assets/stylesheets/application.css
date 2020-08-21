@@ -13,6 +13,26 @@
  *= require_tree .
  *= require_self
  */
+ body {
+	background: #E5E5E5;
+	font-family: 'Lucida Grande', verdana, arial, helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+/* Clearfix */
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+.clearfix {display: block;}
+
+
  .field_with_errors input{
   border: 1px solid red !important;
 }
