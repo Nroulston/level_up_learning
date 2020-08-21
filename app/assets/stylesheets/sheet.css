@@ -2,7 +2,7 @@
 	Main
 ========================================================= */
 #sheet {
-	margin: 10px;
+	margin: auto;
 	padding: 0;
 }
 
@@ -12,7 +12,7 @@
 #sheet div.left {
   background: #fff;
 	float: left;
-	margin: 0 20px 0 0;
+	margin: auto;
 	padding: 0;
 	text-align: left;
 	width: 67%;
@@ -26,7 +26,7 @@
 }
 
 #sheet div.left .header {
-	background: #DED7E0;
+	background: #d1e1c6b1;
 	display: block;
 	height: 24px;
 	margin: 0 0 10px 0;
@@ -36,7 +36,7 @@
 #sheet .left .header h1 {
 	color: #333;
 	display: inline;
-	float: left;
+	/* float: left; */
 	font-family: 'Lucida Grande', arial, sans-serif;	
 	font-size: 18px;
 	margin: 0;
@@ -89,7 +89,7 @@
 
 /* Sheet content */
 #sheet .left .content {
-	margin: 0;
+	margin: auto;
 	padding: 20px;
 }
 
