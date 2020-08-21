@@ -1,21 +1,31 @@
 
   <%# Move this over into a helper method that will create the html below. Use this link to learn https://api.rubyonrails.org/v6.0.3.2/classes/ActionView/Helpers/TagHelper.html#method-i-tag %>
- 
-<% if current_user.id == params[:user_id].to_i %>
-  <h2><%= current_user.email %></h2>
-  <br>
-  <%= link_to "Create a deck", new_user_memory_deck_path %>
-  <br>
-  <h2>Decks</h2>
-  <% MemoryDeck.joins(:user).where("user_id = ?", params[:user_id]).group("title").each  do |deck| %>
-    <p><%= link_to deck.title, memory_deck_path(deck)  %></p>
-  <% end %>
-
-  <h2>Browse student decks</h2>
-  <% @decks.each do |deck| %>
-    <p><%= link_to deck.title, memory_deck_path(deck)  %></p>
-  <% end %>
-<%else %>
-  <%= render partial: "not_current_user" %>
-<% end %>
+<div id="sheet" class="clearfix">
+  <div class="left">
+    <div class="header">
+      <h1>Decks</h1>
+      <div class="links">
+        <%= link_to "Create a deck", new_user_memory_deck_path %>
+      </div>
+    </div>
+    <div class='content'>
+      <h3>Your Decks</h3>
+      <% if current_user.id == params[:user_id].to_i %>
+        <ul>
+          <% MemoryDeck.joins(:user).where("user_id = ?", params[:user_id]).group("title").each  do |deck| %>
+            <li><%= link_to deck.title, memory_deck_path(deck)  %></li>
+          <% end %>
+        </ul>
+        <h3>Browse student decks</h3>
+        <ul>
+          <% @decks.each do |deck| %>
+            <li><%= link_to deck.title, memory_deck_path(deck)  %></li>
+          <% end %>
+        </ul>
+      <%else %>
+        <%= render partial: "not_current_user" %>
+      <% end %>
+    </div>
+  </div>
+</div>
  

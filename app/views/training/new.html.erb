@@ -1,2 +1,13 @@
-<%= @card.question %>
-<%= link_to "Show Answer", training_path(@card) %>
+<div id="sheet" class="clearfix">
+  <div class="left">
+    <%= render partial: 'training_header' 
+      %>
+      <div class="content">
+        <h3>Question</h3>
+        <p><%= @card.question %></p>
+      
+        <%= link_to "Show Answer", training_path(@card) %>
+      </div>
+  </div>
+</div>
+ 

@@ -1,9 +1,19 @@
-<%= @card.question %>
-<%= @card.answer %>
-<br>
 
-
-<%= link_to "That was easy advance card", training_path(@card, advance_card: true), method: :patch%>
-<br>
-<%= link_to "That was hard keep practicing", training_path(@card), method: :patch%>
-<br>
+<div id="sheet" class="clearfix">
+  <div class="left">
+    <%= render partial: 'training_header' 
+      %>
+      <div class="content">
+        <h3>Question</h3>
+        <p><%= @card.question %></p>
+        <h3>Answer</h3>
+        <p><%= @card.answer %></p>
+      
+        <%= link_to "That was easy advance card", training_path(@card, advance_card: true), method: :patch%>
+        <br>
+        <%= link_to "That was hard keep practicing", training_path(@card), method: :patch%>
+        <br>
+      </div>
+  </div>
+</div>
+ 

@@ -1,5 +1,7 @@
-<% if @cards.present? %>
-   <%= link_to "Start your Training", new_training_path%>
-  
-  <% end %>
+<div id="sheet" class="clearfix">
+  <div class="left">
+    <%= render partial: 'training_header' 
+      %>
+  </div>
+</div>
  

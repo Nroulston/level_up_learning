@@ -1,22 +1,24 @@
 
-<h2><%= @deck.title %></h2>
-<%= link_to "Edit title of Deck", edit_memory_deck_path(@deck) %>
-<%= link_to 'Delete Deck',  @deck,  method: :delete, data: { confirm: 'Are you sure?' } %>
-<h4>Cards</h4>
+<div id="sheet" class="clearfix">
+  <div class="left">
+    <div class="header">
+      <h1>Deck: <%= @deck.title %> </h1>
 
-<ul>
-<% @deck.memory_cards.each do |card| %>
-<li><%= link_to card.question, memory_card_path(card)	 %></li>
-
-<% end %>
-</ul>
-
-
-<br>
-
-
-<br>
-<%= link_to "Create a Card", new_memory_deck_memory_card_path(@deck) %>
-
-
-
+      <div class="links">
+        <ul>
+          <li><%= link_to "Edit title of Deck", edit_memory_deck_path(@deck) %></li>
+          <li><%= link_to 'Delete Deck',  @deck,  method: :delete, data: { confirm: 'Are you sure?' } %></li>
+        </ul>
+      </div>
+    </div>
+    <div class='content'>
+      <h3>Cards</h3>
+      <ul>
+        <% @deck.memory_cards.each do |card| %>
+          <li><%= link_to card.question, memory_card_path(card)	 %></li>
+        <% end %>
+      </ul>
+      <%= link_to "Create a Card", new_memory_deck_memory_card_path(@deck) %>
+    </div>
+  </div>
+</div>

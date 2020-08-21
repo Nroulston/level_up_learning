@@ -1,0 +1,12 @@
+<div class="header">
+  <h1>Training</h1>
+    <div class ="links">
+        <ul>
+          <li>
+            <h3><% if @cards.present? %>
+              <%= link_to "Start your Training", new_training_path%></h3>
+            <% end %>
+          </li>
+        </ul>
+    </div>
+</div>
