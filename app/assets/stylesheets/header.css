@@ -84,7 +84,7 @@
 
 #header .tabs a.active {
 	background: #e5e5e5;
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfd', endColorstr='#e5e5e5'); IE
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fdfdfd', endColorstr='#e5e5e5'); /* IE */
 	background: -webkit-gradient(linear, left top, left bottom, from(#fdfdfd), to(#e5e5e5)); /* webkit */
 	background: -moz-linear-gradient(top,  #fdfdfd,  #e5e5e5); /* firefox 3.6+ */
 	color: #333;
