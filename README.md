@@ -1,24 +1,28 @@
-# README
+## Usage
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welcome to Leveled Up Learning. Spaced Repetition learning is a powerful tool that can be applied to your bootcamp journey. Used correctly a person can speed up their learning by only studying what they are just about to forget. If a concept is hard to remember you might just not understand the concept yet. Stay tuned as Leveled Up Learning does it's own leveling up, and makes this easier for you.
 
-Things you may want to cover:
+## Install Instructions
 
-* Ruby version
+Fork and clone to your local machine.
 
-* System dependencies
+Run Bundle install to install all gem dependencies. 
 
-* Configuration
+Run Rails S in the root leveled_up_learning folder.
 
-* Database creation
+Open Your web browser and go to `http://localhost:3000/` 
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Contributing
 
-* Deployment instructions
+Bug reports and pull requests are welcome on GitHub at https://github.com/nroulston/brew_tracker. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/Nroulston/brew_tracker/blob/master/CODE_OF_CONDUCT.md).
 
-* ...
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
+## Code of Conduct
+
+Everyone interacting in the Test project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/Nroulston/leveled_up_learning/blob/master/CODE_OF_CONDUCT.md).
