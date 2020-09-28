@@ -2,6 +2,9 @@
 
 Welcome to Leveled Up Learning. Spaced Repetition learning is a powerful tool that can be applied to your bootcamp journey. Used correctly a person can speed up their learning by only studying what they are just about to forget. If a concept is hard to remember you might just not understand the concept yet. Stay tuned as Leveled Up Learning does it's own leveling up, and makes this easier for you.
 
+## Blog on relational database design for Leveled Up Learning
+https://nroulston.github.io/lets_talk_-_the_tips_i_wish_i_had_before_starting_my_rails_app
+
 ## Prerequisites
 *You have installed the following
   -Ruby 2.6.1
